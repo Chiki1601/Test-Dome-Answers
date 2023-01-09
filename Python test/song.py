@@ -4,27 +4,25 @@ class Song:
         self.next = None
 
     def next_song(self, song):
-        self.next = song
+        self.next = song 
+    
+    def is_in_repeating_playlist(self):
+        turtle = self
+        rabbit = self
 
-    def is_repeating_playlist(self):
-        """
-        :returns: (bool) True if the playlist is repeating, False if not.
-        """
-        playlist = {self}
-        song = self.next
-        while song:
-            if song in playlist:
+        while (turtle and rabbit and rabbit.next):
+            turtle = turtle.next
+            rabbit = rabbit.next.next
+            if turtle == rabbit:
                 return True
-            else:
-                playlist.add(song)
-                song = song.next
+
         return False
 
-
+            
 first = Song("Hello")
 second = Song("Eye of the tiger")
-
+    
 first.next_song(second)
 second.next_song(first)
-
-print(first.is_repeating_playlist())
+    
+print(first.is_in_repeating_playlist())
