@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Styling links</title>
+    <style type="text/css">
+       a {
+        cursor: help;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: lavender;
+      }
+      a:before {
+        content: ">";
+      }
+      a:after {
+        content: "<";
+      }
+    </style>
+  </head>
+  <body>
+    <a href="http://www.testdome.com">Check documentation</a>
+  </body>
+</html>
