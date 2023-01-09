@@ -1,6 +1,9 @@
 function formatDate(userDate) {
-  const x = userDate.split('/');
-  return `${x[2]}${x[1]}${x[0]}`;
+  userDate = new Date(userDate);
+  y = userDate.getFullYear().toString();
+  m = (userDate.getMonth() + 1).toString();
+  d = userDate.getDate().toString();
+  if (m.length == 1) m = '0' + m;
+  if (d.length == 1) d = '0' + d;
+  return y + m + d;
 }
-
-console.log(formatDate("12/31/2014"));
